@@ -229,17 +229,18 @@ function editNhanVien(taiKhoan) {
     domId("btnCapNhat").classList.remove("none");
     domId("btnThemNV").classList.add("none");
     var nv = dsnv.findNV(taiKhoan);
+    if (nv) {
+        domId("tknv").value = nv.taiKhoan;
+        domId("tknv").disabled = true;
 
-    domId("tknv").value = nv.taiKhoan;
-    domId("tknv").disabled = true;
-
-    domId("name").value = nv.hoTen;
-    domId("email").value = nv.email;
-    domId("password").value = nv.matKhau;
-    domId("datepicker").value = nv.ngayLam;
-    domId("luongCB").value = nv.luongCoBan;
-    domId("chucVu").value = nv.chucVu;
-    domId("gioLam").value = nv.gioLam;
+        domId("name").value = nv.hoTen;
+        domId("email").value = nv.email;
+        domId("password").value = nv.matKhau;
+        domId("datepicker").value = nv.ngayLam;
+        domId("luongCB").value = nv.luongCoBan;
+        domId("chucVu").value = nv.chucVu;
+        domId("gioLam").value = nv.gioLam;
+    }
 }
 
 // Cập nhật nhân viên
